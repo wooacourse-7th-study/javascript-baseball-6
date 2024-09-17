@@ -14,10 +14,10 @@ class App {
         resultPrint(strike, ball, nothing); // 결과 출력
 
         if (strike === 3) {
-          const userResultInput = await getRestartInput(); // 재시작 여부
+          const userRestartInput = await getRestartInput(); // 재시작 여부
 
           // 게임 종료
-          if (userResultInput === "2") {
+          if (userRestartInput === "2") {
             MissionUtils.Console.print(END_MESSAGE);
             return;
           }

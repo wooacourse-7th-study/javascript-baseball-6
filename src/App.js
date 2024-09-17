@@ -1,5 +1,13 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
-import { init, getUserInput, getBaseballCount, resultPrint, getRestartInput } from "./utils/index.js";
+import {
+  init,
+  getUserInput,
+  getBaseballCount,
+  resultPrint,
+  getRestartInput,
+  checkThreeStrike,
+  threeStrikeResultPrint,
+} from "./utils/index.js";
 import { END_MESSAGE } from "./constants/index.js";
 
 class App {
@@ -11,9 +19,11 @@ class App {
       while (true) {
         const userInput = await getUserInput();
         const { strike, ball, nothing } = getBaseballCount(computerNumber, userInput);
-        const isThreeStrike = resultPrint(strike, ball, nothing);
+        const isThreeStrike = checkThreeStrike(strike);
 
         if (isThreeStrike) {
+          threeStrikeResultPrint();
+
           const userResultInput = await getRestartInput();
           if (userResultInput === "2") {
             MissionUtils.Console.print(END_MESSAGE);
@@ -23,6 +33,8 @@ class App {
           this.play();
           return;
         }
+
+        resultPrint(strike, ball, nothing);
       }
     } catch (error) {
       if (error.message) {

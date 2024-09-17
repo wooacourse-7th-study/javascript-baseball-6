@@ -1,5 +1,5 @@
 export const isInputValueDuplicate = (userInput) => {
-  const set = new Set([...userInput]);
+  const set = new Set([...userInput]); // 중복 제거
   return set.size !== userInput.length;
 };
 

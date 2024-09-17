@@ -3,7 +3,7 @@ export const getBaseballCount = (computer, user) => {
   let ball = 0;
   let nothing = false;
 
-  // 3스트라이크 early return
+  // 3strike early return
   if (computer === user) {
     strike = 3;
     return { strike, ball, nothing };

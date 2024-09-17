@@ -18,5 +18,5 @@ export const init = () => {
   }
 
   MissionUtils.Console.print(START_MESSAGE);
-  return Number(computer);
+  return computer;
 };

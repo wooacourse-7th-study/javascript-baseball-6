@@ -5,6 +5,7 @@ import {
   OVER_MAX_LENGTH_MESSAGE,
   DUPLICATE_MESSAGE,
   INPUT_VALUE_MAX_LENGTH,
+  RESTART_INPUT_MESSAGE,
 } from "../constants/index.js";
 import { isInputValueLengthValid, isInputValueDuplicate } from "./validation.js";
 
@@ -29,7 +30,22 @@ export const getUserInput = async () => {
 
     return userInput;
   } catch (error) {
-    MissionUtils.Console.print(error.message);
+    throw new Error(error.message);
+  }
+};
+
+export const getRestartInput = async () => {
+  try {
+    const userInput = await MissionUtils.Console.readLineAsync(INPUT_MESSAGE);
+
+    if (userInput !== "1" && userInput !== "2") {
+      throw new Error(RESTART_INPUT_MESSAGE);
+    }
+
+    if (userInput === "2") {
+      throw new Error();
+    }
+  } catch (error) {
     throw new Error(error.message);
   }
 };

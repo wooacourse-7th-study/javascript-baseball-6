@@ -9,6 +9,7 @@ export const END_MESSAGE = "게임을 종료합니다.";
 export const OVER_MAX_LENGTH_MESSAGE = "세 자리 이하만 입력 가능합니다.";
 export const ONLY_NUMBER_MESSAGE = "숫자만 입력 가능합니다.";
 export const DUPLICATE_MESSAGE = "중복된 숫자가 있습니다.";
+export const RESTART_INPUT_MESSAGE = "1 또는 2만 입력 가능합니다.";
 
 // number
 export const INPUT_VALUE_MAX_LENGTH = 3;

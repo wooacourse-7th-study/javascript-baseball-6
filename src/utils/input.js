@@ -2,9 +2,9 @@ import { MissionUtils } from "@woowacourse/mission-utils";
 import {
   INPUT_MESSAGE,
   ONLY_NUMBER_MESSAGE,
-  OVER_MAX_LENGTH_MESSAGE,
+  THREE_LENGTH_MESSAGE,
   DUPLICATE_MESSAGE,
-  INPUT_VALUE_MAX_LENGTH,
+  INPUT_VALUE_LENGTH,
   RESTART_INPUT_MESSAGE,
 } from "../constants/index.js";
 import { isInputValueLengthValid, isInputValueDuplicate } from "./validation.js";
@@ -19,8 +19,8 @@ export const getUserInput = async () => {
     }
 
     // 인풋 길이 체크
-    if (isInputValueLengthValid(userInput, INPUT_VALUE_MAX_LENGTH)) {
-      throw new Error(OVER_MAX_LENGTH_MESSAGE);
+    if (isInputValueLengthValid(userInput, INPUT_VALUE_LENGTH)) {
+      throw new Error(THREE_LENGTH_MESSAGE);
     }
 
     // 중복 체크
@@ -43,10 +43,7 @@ export const getRestartInput = async () => {
       throw new Error(RESTART_INPUT_MESSAGE);
     }
 
-    // 2인 경우 종료
-    if (userInput === "2") {
-      throw new Error();
-    }
+    return userInput;
   } catch (error) {
     throw new Error(error.message);
   }

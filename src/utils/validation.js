@@ -3,6 +3,6 @@ export const isInputValueDuplicate = (userInput) => {
   return set.size !== userInput.length;
 };
 
-export const isInputValueLengthValid = (userInput, maxLength) => {
-  return userInput.length > maxLength;
+export const isInputValueLengthValid = (userInput, length) => {
+  return userInput.length !== length;
 };

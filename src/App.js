@@ -6,7 +6,7 @@ class App {
   async play() {
     try {
       const computerNumber = init();
-      // console.log(`컴퓨터 번호(테스트용): ${computerNumber}`);
+      console.log(`컴퓨터 번호(테스트용): ${computerNumber}`);
 
       while (true) {
         const userInput = await getUserInput();
@@ -14,7 +14,12 @@ class App {
         const isThreeStrike = resultPrint(strike, ball, nothing);
 
         if (isThreeStrike) {
-          await getRestartInput();
+          const userResultInput = await getRestartInput();
+          if (userResultInput === "2") {
+            MissionUtils.Console.print(END_MESSAGE);
+            return;
+          }
+
           this.play();
           return;
         }
@@ -24,7 +29,9 @@ class App {
         MissionUtils.Console.print(error.message);
       }
 
-      MissionUtils.Console.print(END_MESSAGE);
+      // MissionUtils.Console.print(END_MESSAGE);
+
+      throw error;
     }
   }
 }

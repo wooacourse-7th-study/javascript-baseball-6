@@ -9,11 +9,12 @@ export const resultPrint = (strike, ball, nothing) => {
 
   if (strike === 3) {
     MissionUtils.Console.print(strike + STRIKE_TEXT);
-    MissionUtils.Console.print(THREE_STRIKE_MESSAGE);
+    MissionUtils.Console.print("게임 종료");
+    // MissionUtils.Console.print(THREE_STRIKE_MESSAGE);
     MissionUtils.Console.print(RESTART_MESSAGE);
     return true;
   }
 
-  MissionUtils.Console.print(`${strike}${STRIKE_TEXT} ${ball}${BALL_TEXT}`);
+  MissionUtils.Console.print(`${ball}${BALL_TEXT} ${strike}${STRIKE_TEXT} `);
   return false;
 };

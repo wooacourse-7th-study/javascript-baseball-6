@@ -18,7 +18,7 @@ export const getUserInput = async () => {
       throw new Error(ONLY_NUMBER_MESSAGE);
     }
 
-    // 인풋 길이 체크
+    // 인풋 길이(3) 체크
     if (isInputValueLengthValid(userInput, INPUT_VALUE_LENGTH)) {
       throw new Error(THREE_LENGTH_MESSAGE);
     }

@@ -6,7 +6,8 @@ class App {
   async play() {
     try {
       const computerNumber = init();
-      console.log(computerNumber);
+      console.log(`컴퓨터 번호(테스트용): ${computerNumber}`);
+
       while (true) {
         const userInput = await getUserInput();
         const { strike, ball, nothing } = getBaseballCount(computerNumber, userInput);

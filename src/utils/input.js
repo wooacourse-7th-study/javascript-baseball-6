@@ -11,7 +11,7 @@ import { isInputValueLengthValid, isInputValueDuplicate } from "./validation.js"
 export const getUserInput = async () => {
   try {
     const userInput = await MissionUtils.Console.readLineAsync(INPUT_MESSAGE);
-    console.log(userInput);
+
     // 숫자인지 체크
     if (isNaN(userInput)) {
       throw new Error(ONLY_NUMBER_MESSAGE);

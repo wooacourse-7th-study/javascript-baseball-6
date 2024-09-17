@@ -2,3 +2,4 @@
 export * from "./count.js";
 export * from "./init.js";
 export * from "./input.js";
+export * from "./result.js";

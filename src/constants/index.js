@@ -16,6 +16,6 @@ export const MIN_NUMBER = 1;
 export const MAX_NUMBER = 9;
 
 // count
-export const NOTHING = "낫싱";
-export const STRIKE = "스트라이크";
-export const BALL = "볼";
+export const NOTHING_TEXT = "낫싱";
+export const STRIKE_TEXT = "스트라이크";
+export const BALL_TEXT = "볼";

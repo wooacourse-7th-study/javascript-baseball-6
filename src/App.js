@@ -27,9 +27,7 @@ class App {
         }
       }
     } catch (error) {
-      if (error.message) {
-        MissionUtils.Console.print(error.message);
-      }
+      MissionUtils.Console.print(error.message);
 
       throw error;
     }

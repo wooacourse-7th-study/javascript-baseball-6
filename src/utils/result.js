@@ -8,6 +8,7 @@ export const resultPrint = (strike, ball, nothing) => {
   }
 
   if (strike === 3) {
+    MissionUtils.Console.print(strike + STRIKE_TEXT);
     MissionUtils.Console.print(THREE_STRIKE_MESSAGE);
     MissionUtils.Console.print(RESTART_MESSAGE);
     return true;

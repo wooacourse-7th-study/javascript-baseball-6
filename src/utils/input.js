@@ -36,12 +36,14 @@ export const getUserInput = async () => {
 
 export const getRestartInput = async () => {
   try {
-    const userInput = await MissionUtils.Console.readLineAsync(INPUT_MESSAGE);
+    const userInput = await MissionUtils.Console.readLineAsync("");
 
+    // 1, 2가 아닌 경우
     if (userInput !== "1" && userInput !== "2") {
       throw new Error(RESTART_INPUT_MESSAGE);
     }
 
+    // 2인 경우 종료
     if (userInput === "2") {
       throw new Error();
     }

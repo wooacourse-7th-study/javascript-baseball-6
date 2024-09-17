@@ -17,6 +17,6 @@ export const init = () => {
     hash[number] = true;
   }
 
-  // MissionUtils.Console.print(START_MESSAGE);
+  MissionUtils.Console.print(START_MESSAGE);
   return computer;
 };

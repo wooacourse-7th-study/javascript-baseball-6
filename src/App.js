@@ -1,13 +1,5 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
-import {
-  init,
-  getUserInput,
-  getBaseballCount,
-  resultPrint,
-  getRestartInput,
-  checkThreeStrike,
-  threeStrikeResultPrint,
-} from "./utils/index.js";
+import { init, getUserInput, getBaseballCount, resultPrint, getRestartInput } from "./utils/index.js";
 import { END_MESSAGE } from "./constants/index.js";
 
 class App {
@@ -19,29 +11,25 @@ class App {
       while (true) {
         const userInput = await getUserInput();
         const { strike, ball, nothing } = getBaseballCount(computerNumber, userInput);
-        const isThreeStrike = checkThreeStrike(strike);
+        resultPrint(strike, ball, nothing); // 결과 출력
 
-        if (isThreeStrike) {
-          threeStrikeResultPrint();
+        if (strike === 3) {
+          const userResultInput = await getRestartInput(); // 재시작 여부
 
-          const userResultInput = await getRestartInput();
+          // 게임 종료
           if (userResultInput === "2") {
             MissionUtils.Console.print(END_MESSAGE);
             return;
           }
 
-          this.play();
+          this.play(); // 재시작
           return;
         }
-
-        resultPrint(strike, ball, nothing);
       }
     } catch (error) {
       if (error.message) {
         MissionUtils.Console.print(error.message);
       }
-
-      // MissionUtils.Console.print(END_MESSAGE);
 
       throw error;
     }

@@ -31,5 +31,3 @@ export const getBaseballCount = (computer, user) => {
 
   return { strike, ball, nothing };
 };
-
-export const checkThreeStrike = (strike) => strike === 3;

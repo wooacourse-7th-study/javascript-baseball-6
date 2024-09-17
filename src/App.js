@@ -1,6 +1,8 @@
+import { init } from "./utils/index.js";
+
 class App {
   async play() {
-    console.log("a");
+    const computerNumber = init();
   }
 }
 

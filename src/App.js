@@ -12,18 +12,20 @@ class App {
         const { strike, ball, nothing } = getBaseballCount(computerNumber, userInput);
         resultPrint(strike, ball, nothing); // 결과 출력
 
-        if (strike === 3) {
-          const userRestartInput = await getRestartInput(); // 재시작 여부
+        if (strike !== 3) {
+          continue;
+        }
 
-          // 게임 종료
-          if (userRestartInput === "2") {
-            MissionUtils.Console.print(END_MESSAGE);
-            return;
-          }
+        const userRestartInput = await getRestartInput(); // 재시작 여부
 
-          this.play(); // 재시작
+        // 게임 종료
+        if (userRestartInput === "2") {
+          MissionUtils.Console.print(END_MESSAGE);
           return;
         }
+
+        this.play(); // 재시작
+        return;
       }
     } catch (error) {
       MissionUtils.Console.print(error.message);

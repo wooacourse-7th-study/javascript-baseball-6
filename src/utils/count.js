@@ -16,10 +16,7 @@ export const getBaseballCount = (computer, user) => {
       continue;
     }
 
-    const computerArray = [...computer];
-    const userArray = [...user];
-
-    if (computerArray.includes(userArray[i])) {
+    if (computer.includes(user[i])) {
       ball++;
     }
   }

@@ -22,5 +22,5 @@ export const resultPrint = (strike, ball, nothing) => {
     return;
   }
 
-  MissionUtils.Console.print(`${ball}${BALL_TEXT} ${strike}${STRIKE_TEXT} `);
+  MissionUtils.Console.print(`${ball + BALL_TEXT} ${strike + STRIKE_TEXT}`);
 };

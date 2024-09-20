@@ -16,5 +16,11 @@ export const resultPrint = (strike, ball, nothing) => {
     return;
   }
 
+  // only strike early return
+  if (ball === 0) {
+    MissionUtils.Console.print(strike + STRIKE_TEXT);
+    return;
+  }
+
   MissionUtils.Console.print(`${ball}${BALL_TEXT} ${strike}${STRIKE_TEXT} `);
 };

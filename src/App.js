@@ -12,6 +12,7 @@ class App {
         const { strike, ball, nothing } = getBaseballCount(computerNumber, userInput);
         resultPrint(strike, ball, nothing); // 결과 출력
 
+        // 3strike가 아니면 계속 루프
         if (strike !== 3) {
           continue;
         }

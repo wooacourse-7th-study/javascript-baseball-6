@@ -44,7 +44,11 @@ class App {
 		}
 
 		//재시작 유무
-		await restartGame()
+		const isRestart = await restartGame()
+		if (isRestart) {
+			const app = new App()
+			app.play()
+		}
 	}
 }
 

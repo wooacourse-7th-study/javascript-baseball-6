@@ -20,6 +20,7 @@ export const RULES = {
   INPUT_LENGTH: 3,
   MIN_NUMBER: 1,
   MAX_NUMBER: 9,
+  NUM_LENGTH: 3,
 };
 
 // 결과

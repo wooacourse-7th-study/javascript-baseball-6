@@ -29,3 +29,9 @@
   - [ ] 입력 유효값 확인
     - [ ] 입력값이 1일 경우, 게임 재시작
     - [ ] 입력값이 2일 경우, 게임 종료
+
+## 사용 라이브러리
+
+@woowacourse/mission-utils의 Random 및 Console API를 사용하여 구현해야 한다.
+Random 값 추출은 Random.pickNumberInRange()를 활용한다.
+사용자의 값을 입력 받고 출력하기 위해서는 Console.readLineAsync, Console.print를 활용한다.

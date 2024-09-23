@@ -25,21 +25,22 @@ class App {
 				MissionUtils.Console.print(MESSAGE.END)
 				break
 			}
-
-			if (strike > 0 && ball === 0) {
-				MissionUtils.Console.print(strike + MESSAGE.STRIKE)
-			}
-			if (ball > 0 && strike === 0) {
-				MissionUtils.Console.print(ball + MESSAGE.BALL)
-			}
-			if (ball > 0 && strike > 0) {
-				MissionUtils.Console.print(
-					ball + MESSAGE.BALL + ' ' + strike + MESSAGE.STRIKE,
-				)
-			}
 			if (ball === 0 && strike === 0) {
 				MissionUtils.Console.print(MESSAGE.NOTHING)
+				continue
 			}
+
+			if (ball === 0) {
+				MissionUtils.Console.print(strike + MESSAGE.STRIKE)
+				continue
+			}
+			if (strike === 0) {
+				MissionUtils.Console.print(ball + MESSAGE.BALL)
+				continue
+			}
+			MissionUtils.Console.print(
+				ball + MESSAGE.BALL + ' ' + strike + MESSAGE.STRIKE,
+			)
 		}
 
 		//재시작 유무

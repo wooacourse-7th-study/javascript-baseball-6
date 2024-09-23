@@ -1,8 +1,7 @@
 import { MissionUtils } from '@woowacourse/mission-utils'
 
-export const randomNum = () => {
+const randomNum = () => {
 	const arr = []
-
 	while (arr.length < 3) {
 		const randomNumber = MissionUtils.Random.pickNumberInRange(1, 9)
 
@@ -15,3 +14,4 @@ export const randomNum = () => {
 
 	return arr
 }
+export default randomNum

@@ -1,8 +1,10 @@
 import { MissionUtils } from '@woowacourse/mission-utils'
-import { randomNum } from './utils/randomNum.js'
-import { userInput } from './utils/userInput.js'
-import { restartGame } from './utils/restartGame.js'
-import { resultStrikeBall } from './utils/resultStrikeBall.js'
+import {
+	resultStrikeBall,
+	userInput,
+	randomNum,
+	restartGame,
+} from './utils/index.js'
 import { message } from './const/message.js'
 class App {
 	async play() {

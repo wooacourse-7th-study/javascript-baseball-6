@@ -1,9 +1,9 @@
 import { MissionUtils } from '@woowacourse/mission-utils'
 import App from '../App.js'
-import { message } from '../const/message.js'
+import { MESSAGE } from '../constants/message.js'
 
 export const restartGame = async () => {
-	const input = await MissionUtils.Console.readLineAsync(message.RESTART)
+	const input = await MissionUtils.Console.readLineAsync(MESSAGE.RESTART)
 
 	if (input === '1') {
 		const newApp = new App()

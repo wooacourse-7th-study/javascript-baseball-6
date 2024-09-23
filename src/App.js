@@ -5,11 +5,11 @@ import {
 	randomNum,
 	restartGame,
 } from './utils/index.js'
-import { message } from './const/message.js'
+import { MESSAGE } from './constants/message.js'
 class App {
 	async play() {
 		//시작
-		MissionUtils.Console.print('숫자 야구 게임을 시작합니다.')
+		MissionUtils.Console.print(MESSAGE.START)
 
 		const randomArr = randomNum()
 
@@ -21,24 +21,24 @@ class App {
 			const { strike, ball } = resultStrikeBall(randomArr, userInputNumber)
 
 			if (strike === 3) {
-				MissionUtils.Console.print('3' + message.STRIKE)
-				MissionUtils.Console.print(message.END)
+				MissionUtils.Console.print('3' + MESSAGE.STRIKE)
+				MissionUtils.Console.print(MESSAGE.END)
 				break
 			}
 
 			if (strike > 0 && ball === 0) {
-				MissionUtils.Console.print(strike + message.STRIKE)
+				MissionUtils.Console.print(strike + MESSAGE.STRIKE)
 			}
 			if (ball > 0 && strike === 0) {
-				MissionUtils.Console.print(ball + message.BALL)
+				MissionUtils.Console.print(ball + MESSAGE.BALL)
 			}
 			if (ball > 0 && strike > 0) {
 				MissionUtils.Console.print(
-					ball + message.BALL + ' ' + strike + message.STRIKE,
+					ball + MESSAGE.BALL + ' ' + strike + MESSAGE.STRIKE,
 				)
 			}
 			if (ball === 0 && strike === 0) {
-				MissionUtils.Console.print(message.NOTHING)
+				MissionUtils.Console.print(MESSAGE.NOTHING)
 			}
 		}
 

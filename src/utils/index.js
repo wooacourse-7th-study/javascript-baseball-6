@@ -1,0 +1,5 @@
+export { default as randomNum } from './randomNum.js'
+export { default as restartGame } from './restartGame.js'
+export { default as resultStrikeBall } from './resultStrikeBall.js'
+export { default as userInput } from './userInput.js'
+export { default as userInputValidate } from './userInputValidate.js'

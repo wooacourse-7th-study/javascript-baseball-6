@@ -5,9 +5,9 @@ const randomNum = () => {
 	while (arr.length < 3) {
 		const randomNumber = MissionUtils.Random.pickNumberInRange(1, 9)
 
-		let overlap = arr.indexOf(String(randomNumber))
+		let overlap = arr.includes(String(randomNumber))
 
-		if (overlap === -1) {
+		if (!overlap) {
 			arr.push(String(randomNumber))
 		}
 	}

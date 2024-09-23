@@ -12,7 +12,7 @@ const resultPrint = (result) => {
   if (strike === RULES.NUM_LENGTH) {
     MissionUtils.Console.print(RULES.NUM_LENGTH + RESULT.STRIKE);
     MissionUtils.Console.print(GAME_MESSAGES.THREE_STRIKE);
-    return;
+    return "finish";
   }
 
   if (strike > 0 && ball === 0) {

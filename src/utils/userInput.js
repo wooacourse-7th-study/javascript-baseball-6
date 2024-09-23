@@ -1,11 +1,11 @@
 import { MissionUtils } from '@woowacourse/mission-utils'
-import Validation from './validation.js'
+import userInputValidate from './userInputValidate.js'
 import { MESSAGE } from '../constants/message.js'
 
 const userInput = async () => {
 	const userInputNum = await MissionUtils.Console.readLineAsync(MESSAGE.INPUT)
 
-	Validation(userInputNum)
+	userInputValidate(userInputNum)
 
 	return userInputNum
 }

@@ -1,4 +1,4 @@
-export const Validation = input => {
+const Validation = input => {
 	//숫자인지 확인
 	if (isNaN(input)) {
 		throw new Error('[ERROR]')
@@ -22,3 +22,4 @@ export const Validation = input => {
 
 	return
 }
+export default Validation

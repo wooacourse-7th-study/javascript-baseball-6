@@ -2,7 +2,7 @@ import { MissionUtils } from '@woowacourse/mission-utils'
 import App from '../App.js'
 import { MESSAGE } from '../constants/message.js'
 
-export const restartGame = async () => {
+const restartGame = async () => {
 	const input = await MissionUtils.Console.readLineAsync(MESSAGE.RESTART)
 
 	if (input === '1') {
@@ -14,3 +14,4 @@ export const restartGame = async () => {
 		throw new Error('[ERROR]')
 	}
 }
+export default restartGame

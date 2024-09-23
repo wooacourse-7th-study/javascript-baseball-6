@@ -1,4 +1,4 @@
-export const resultStrikeBall = (computerRandom, userInputNumber) => {
+const resultStrikeBall = (computerRandom, userInputNumber) => {
 	let strike = 0
 	let ball = 0
 
@@ -14,3 +14,4 @@ export const resultStrikeBall = (computerRandom, userInputNumber) => {
 
 	return { strike, ball }
 }
+export default resultStrikeBall

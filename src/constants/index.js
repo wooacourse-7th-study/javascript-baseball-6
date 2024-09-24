@@ -13,6 +13,7 @@ export const VALIDATION = Object.freeze({
   ONLY_NUMBER_MESSAGE: "[ERROR] 숫자만 입력 가능합니다.",
   DUPLICATE_MESSAGE: "[ERROR] 중복된 숫자가 있습니다.",
   RESTART_INPUT_MESSAGE: "[ERROR] 1 또는 2만 입력 가능합니다.",
+  NON_ZERO_MESSAGE: "[ERROR] 0은 입력할 수 없습니다.",
 });
 
 // count

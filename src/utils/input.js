@@ -16,6 +16,11 @@ export const getUserInput = async () => {
       throw new Error(VALIDATION.THREE_LENGTH_MESSAGE);
     }
 
+    // 0 체크
+    if (userInput.includes("0")) {
+      throw new Error(VALIDATION.NON_ZERO_MESSAGE);
+    }
+
     // 중복 체크
     if (isInputValueDuplicate(userInput)) {
       throw new Error(VALIDATION.DUPLICATE_MESSAGE);

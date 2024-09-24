@@ -4,5 +4,5 @@ export const isInputValueDuplicate = (userInput) => {
 };
 
 export const isInputValueLengthValid = (userInput, length) => {
-  return userInput.length !== length;
+  return userInput.trim().length !== length;
 };

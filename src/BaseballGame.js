@@ -12,9 +12,9 @@ class BaseballGame {
     this.#ComputerNums = nums;
   }
 
-  setUserNums(nums) {
-    isInputValid(nums, this.#COMPUTER_NUM_LEN);
-    this.#UserNums = nums.split("").map((str) => Number(str));
+  setUserNums(input) {
+    isInputValid(input, this.#COMPUTER_NUM_LEN);
+    this.#UserNums = input.split("").map((str) => Number(str));
   }
 
   /**
@@ -42,9 +42,9 @@ class BaseballGame {
   async playGame() {
     let isUserWin = false;
     while (!isUserWin) {
-      const USER_INPUT = await MissionUtils.Console.readLineAsync("숫자를 입력해주세요 : ");
+      const userInput = await MissionUtils.Console.readLineAsync("숫자를 입력해주세요 : ");
 
-      this.setUserNums(USER_INPUT);
+      this.setUserNums(userInput);
 
       const { strike, ball } = getResult({
         computerNums: this.#ComputerNums,
@@ -63,11 +63,11 @@ class BaseballGame {
    * 재시작과 완전한 종료로 나뉩니다.
    */
   async endGame() {
-    const USER_INPUT = await MissionUtils.Console.readLineAsync(
+    const userInput = await MissionUtils.Console.readLineAsync(
       "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요. \n"
     );
-    isEndInputValid(USER_INPUT);
-    if (USER_INPUT === "1") await this.runGame();
+    isEndInputValid(userInput);
+    if (userInput === "1") await this.runGame();
     else MissionUtils.Console.print("게임이 종료되었습니다.");
   }
 }

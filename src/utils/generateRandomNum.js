@@ -9,15 +9,15 @@ import { MissionUtils } from "@woowacourse/mission-utils";
  * @returns {number[]} 컴퓨터가 선택한 수의 배열
  */
 function generateRandomNum({ min, max, length }) {
-  const COMPUTER_NUMS = [];
-  while (COMPUTER_NUMS.length < length) {
+  const computerNums = [];
+  while (computerNums.length < length) {
     const number = MissionUtils.Random.pickNumberInRange(min, max);
     // 중복되는 숫자 없도록 예외 처리
-    if (!COMPUTER_NUMS.includes(number)) {
-      COMPUTER_NUMS.push(number);
+    if (!computerNums.includes(number)) {
+      computerNums.push(number);
     }
   }
-  return COMPUTER_NUMS;
+  return computerNums;
 }
 
 export default generateRandomNum;

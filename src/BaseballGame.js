@@ -32,7 +32,7 @@ class BaseballGame {
    */
   startGame() {
     MissionUtils.Console.print("숫자 야구 게임을 시작합니다.");
-    this.setComputerNums(generateRandomNum(1, 9, this.#COMPUTER_NUM_LEN));
+    this.setComputerNums(generateRandomNum({ min: 1, max: 9, length: this.#COMPUTER_NUM_LEN }));
   }
 
   /**

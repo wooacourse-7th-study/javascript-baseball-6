@@ -1,9 +1,9 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import { MESSAGE, COUNT_TEXT } from "../constants/index.js";
 
-export const resultPrint = (strike, ball, nothing) => {
+export const resultPrint = (strike, ball) => {
   // nothing early return
-  if (nothing) {
+  if (strike === 0 && ball === 0) {
     MissionUtils.Console.print(COUNT_TEXT.NOTHING);
     return;
   }

@@ -1,12 +1,11 @@
 export const getBaseballCount = (computer, user) => {
   let strike = 0;
   let ball = 0;
-  let nothing = false;
 
   // 3strike early return
   if (computer === user) {
     strike = 3;
-    return { strike, ball, nothing };
+    return { strike, ball };
   }
 
   // 카운트
@@ -21,10 +20,5 @@ export const getBaseballCount = (computer, user) => {
     }
   }
 
-  // 낫싱 체크
-  if (strike === 0 && ball === 0) {
-    nothing = true;
-  }
-
-  return { strike, ball, nothing };
+  return { strike, ball };
 };

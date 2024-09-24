@@ -13,11 +13,16 @@ export function getResult({ computerNums, userNums }) {
   const ARR_LENGTH = Math.min(computerNums.length, userNums.length);
 
   for (let i = 0; i < ARR_LENGTH; i++) {
-    for (let j = 0; j < ARR_LENGTH; j++) {
-      if (i === j && computerNums[i] === userNums[j]) strike++;
-      if (i !== j && computerNums[i] === userNums[j]) ball++;
+    // 스트라이크인 경우
+    if (computerNums[i] === userNums[i]) {
+      strike++;
+      continue;
     }
+    // 볼인 경우
+    const hasUserNum = computerNums.includes(userNums[i]);
+    if (hasUserNum) ball++;
   }
+
   return { strike, ball };
 }
 

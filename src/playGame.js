@@ -3,7 +3,7 @@ import { GAME_MESSAGES, RULES } from "../constants/messages.js";
 import randomNumber from "../utils/randomNumber.js";
 import userInputValidation from "../utils/userInputValidation.js";
 import resultPrint from "../utils/resultPrint.js";
-import compareToNumber from "../utils/compareToNumber.js";
+import getBaseballCount from "../utils/getBaseballCount.js";
 
 const playGame = async () => {
   const computerNumber = randomNumber();
@@ -11,12 +11,12 @@ const playGame = async () => {
     const userInput = await MissionUtils.Console.readLineAsync(
       GAME_MESSAGES.INPUT
     );
-    await userInputValidation(userInput);
+    userInputValidation(userInput);
     const userNum = Array.from(userInput, Number);
 
-    const result = compareToNumber(computerNumber, userNum);
+    const result = getBaseballCount(computerNumber, userNum);
     await resultPrint(result);
-    if (result[0] === RULES.NUM_LENGTH) {
+    if (result[0] === RULES.NUMBER_MAX_LENGTH) {
       break;
     }
   }

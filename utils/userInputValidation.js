@@ -11,7 +11,7 @@ const userInputValidation = (userNum) => {
   if (isNaN(userNum)) {
     throw new Error(VALIDATION_MESSAGES.ONLY_NUMBER);
   }
-  if (isLengthValid(userNum, RULES.NUM_LENGTH)) {
+  if (isLengthValid(userNum, RULES.NUMBER_MAX_LENGTH)) {
     throw new Error(VALIDATION_MESSAGES.THREE_LENGTH);
   }
   if (isDuplicate(userNum)) {

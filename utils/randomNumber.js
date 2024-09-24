@@ -7,10 +7,10 @@ import { RULES } from "../constants/messages.js";
 const randomNumber = () => {
   const set = new Set();
 
-  while (set.size < RULES.NUM_LENGTH) {
+  while (set.size < RULES.NUMBER_MAX_LENGTH) {
     const randomNum = MissionUtils.Random.pickNumberInRange(
-      RULES.MIN_NUMBER,
-      RULES.MAX_NUMBER
+      RULES.MIN_RANDOM_NUMBER,
+      RULES.MAX_RANDOM_NUMBER
     );
     set.add(randomNum);
   }

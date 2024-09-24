@@ -14,23 +14,23 @@ const resultPrint = (result) => {
     MissionUtils.Console.print(RESULT.NOTHING);
     return;
   }
-  if (strike === RULES.NUM_LENGTH) {
-    MissionUtils.Console.print(RULES.NUM_LENGTH + RESULT.STRIKE);
+  if (strike === RULES.NUMBER_MAX_LENGTH) {
+    MissionUtils.Console.print(RULES.NUMBER_MAX_LENGTH + RESULT.STRIKE);
     MissionUtils.Console.print(GAME_MESSAGES.THREE_STRIKE);
     return;
   }
 
-  if (strike > 0 && ball === 0) {
-    MissionUtils.Console.print(`${strike}${RESULT.STRIKE}`);
+  if (ball === 0) {
+    MissionUtils.Console.print(strike + RESULT.STRIKE);
     return;
   }
 
-  if (ball > 0 && strike === 0) {
-    MissionUtils.Console.print(`${ball}${RESULT.BALL}`);
+  if (strike === 0) {
+    MissionUtils.Console.print(ball + RESULT.BALL);
     return;
   }
 
-  MissionUtils.Console.print(`${strike}${RESULT.STRIKE} ${ball}${RESULT.BALL}`);
+  MissionUtils.Console.print(`${strike + RESULT.STRIKE} ${ball + RESULT.BALL}`);
 };
 
 export default resultPrint;

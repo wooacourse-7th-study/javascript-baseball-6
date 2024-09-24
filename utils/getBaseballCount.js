@@ -1,5 +1,5 @@
 import { RULES } from "../constants/messages.js";
-const compareToNumber = (computerNumber, userNum) => {
+const getBaseballCount = (computerNumber, userNum) => {
   const arr = [0, 0]; // 볼 , 스트라이크
 
   if (computerNumber === userNum) {
@@ -7,7 +7,7 @@ const compareToNumber = (computerNumber, userNum) => {
     return arr;
   }
 
-  for (let i = 0; i < RULES.NUM_LENGTH; i++) {
+  for (let i = 0; i < RULES.NUMBER_MAX_LENGTH; i++) {
     if (computerNumber[i] === userNum[i]) {
       arr[0]++;
       continue;
@@ -20,4 +20,4 @@ const compareToNumber = (computerNumber, userNum) => {
   return arr;
 };
 
-export default compareToNumber;
+export default getBaseballCount;

@@ -4,11 +4,11 @@ import playGame from "./playGame.js";
 import askForRestart from "../utils/askForRestart.js";
 class App {
   async play() {
-    let continueGame = true;
+    let isContinueGame = true;
     MissionUtils.Console.print(GAME_MESSAGES.START);
-    while (continueGame) {
+    while (isContinueGame) {
       await playGame();
-      continueGame = await askForRestart();
+      isContinueGame = await askForRestart();
     }
     MissionUtils.Console.print(GAME_MESSAGES.END);
   }

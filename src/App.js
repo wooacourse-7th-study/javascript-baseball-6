@@ -12,22 +12,21 @@ class App {
         const { strike, ball } = getBaseballCount(computerNumber, userInput);
         resultPrint(strike, ball); // 결과 출력
 
-        // 3strike가 아니면 계속 루프
-        if (strike !== 3) {
-          continue;
+        // 3strike 게임 종료
+        if (strike === 3) {
+          break;
         }
+      }
 
-        const userRestartInput = await getRestartInput(); // 재시작 여부
+      const userRestartInput = await getRestartInput(); // 재시작 여부
 
-        // 게임 종료
-        if (userRestartInput === "2") {
-          MissionUtils.Console.print(MESSAGE.END);
-          return;
-        }
-
-        this.play(); // 재시작
+      // 게임 종료
+      if (userRestartInput === "2") {
+        MissionUtils.Console.print(MESSAGE.END);
         return;
       }
+
+      this.play(); // 재시작
     } catch (error) {
       MissionUtils.Console.print(error.message);
       throw error;

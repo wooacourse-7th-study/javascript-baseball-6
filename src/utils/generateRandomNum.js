@@ -13,7 +13,8 @@ function generateRandomNum({ min, max, length }) {
   while (computerNums.length < length) {
     const number = MissionUtils.Random.pickNumberInRange(min, max);
     // 중복되는 숫자 없도록 예외 처리
-    if (!computerNums.includes(number)) {
+    const isOverlap = computerNums.includes(number);
+    if (!isOverlap) {
       computerNums.push(number);
     }
   }

@@ -1,7 +1,7 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
-import { generateRandomNum } from "./utils/generateRandomNum";
-import { isInputValid, isEndInputValid } from "./utils/validation";
-import { getResult, printResult } from "./utils/getResult";
+import { generateRandomNum } from "./utils/generateRandomNum.js";
+import { isInputValid, isEndInputValid } from "./utils/validation.js";
+import { getResult, printResult } from "./utils/getResult.js";
 
 class BaseballGame {
   #COMPUTER_NUM_LEN = 3;
@@ -31,7 +31,7 @@ class BaseballGame {
    * 게임 시작 멘트를 출력하며, 컴퓨터의 숫자 3개를 정합니다.
    */
   async startGame() {
-    await MissionUtils.Console.print("숫자 야구 게임을 시작합니다.");
+    MissionUtils.Console.print("숫자 야구 게임을 시작합니다.");
     this.setComputerNums(await generateRandomNum(1, 9, this.#COMPUTER_NUM_LEN));
   }
 

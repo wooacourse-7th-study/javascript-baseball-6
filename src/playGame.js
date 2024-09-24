@@ -6,7 +6,7 @@ import resultPrint from "../utils/resultPrint.js";
 import compareToNumber from "../utils/compareToNumber.js";
 
 const playGame = async () => {
-  const comNum = randomNumber();
+  const computerNumber = randomNumber();
   while (true) {
     const userInput = await MissionUtils.Console.readLineAsync(
       GAME_MESSAGES.INPUT
@@ -14,7 +14,7 @@ const playGame = async () => {
     await userInputValidation(userInput);
     const userNum = Array.from(userInput, Number);
 
-    const result = compareToNumber(comNum, userNum);
+    const result = compareToNumber(computerNumber, userNum);
     await resultPrint(result);
     if (result[0] === RULES.NUM_LENGTH) {
       break;

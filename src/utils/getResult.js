@@ -7,7 +7,7 @@ import { MissionUtils } from "@woowacourse/mission-utils";
  * @param {number[]} params.userNums - 플레이어가 입력한 숫자 배열
  * @returns {{ strike: number, ball: number }} - 스트라이크와 볼 개수
  */
-export async function getResult({ computerNums, userNums }) {
+export function getResult({ computerNums, userNums }) {
   let strike = 0;
   let ball = 0;
   const ARR_LENGTH = Math.min(computerNums.length, userNums.length);
@@ -27,9 +27,9 @@ export async function getResult({ computerNums, userNums }) {
  * @param {number} params.strike - 스트라이크 개수
  * @param {number} params.ball - 볼 개수
  */
-export async function printResult({ strike, ball }) {
-  if (strike === 0 && ball === 0) await MissionUtils.Console.print("낫싱");
-  else if (strike === 0) await MissionUtils.Console.print(`${ball}볼`);
-  else if (ball === 0) await MissionUtils.Console.print(`${strike}스트라이크`);
-  else await MissionUtils.Console.print(`${ball}볼 ${strike}스트라이크`);
+export function printResult({ strike, ball }) {
+  if (strike === 0 && ball === 0) MissionUtils.Console.print("낫싱");
+  else if (strike === 0) MissionUtils.Console.print(`${ball}볼`);
+  else if (ball === 0) MissionUtils.Console.print(`${strike}스트라이크`);
+  else MissionUtils.Console.print(`${ball}볼 ${strike}스트라이크`);
 }

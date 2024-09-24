@@ -21,7 +21,7 @@ class BaseballGame {
    * 게임의 전체 진행을 위한 메서드입니다.
    */
   async runGame() {
-    await this.startGame();
+    this.startGame();
     await this.playGame();
     await this.endGame();
   }
@@ -30,9 +30,9 @@ class BaseballGame {
    * 게임 시작을 위한 메서드입니다.
    * 게임 시작 멘트를 출력하며, 컴퓨터의 숫자 3개를 정합니다.
    */
-  async startGame() {
+  startGame() {
     MissionUtils.Console.print("숫자 야구 게임을 시작합니다.");
-    this.setComputerNums(await generateRandomNum(1, 9, this.#COMPUTER_NUM_LEN));
+    this.setComputerNums(generateRandomNum(1, 9, this.#COMPUTER_NUM_LEN));
   }
 
   /**
@@ -46,13 +46,13 @@ class BaseballGame {
 
       this.setUserNums(USER_INPUT);
 
-      const { strike, ball } = await getResult({
+      const { strike, ball } = getResult({
         computerNums: this.#ComputerNums,
         userNums: this.#UserNums,
       });
-      await printResult({ strike, ball });
+      printResult({ strike, ball });
       if (strike === 3) {
-        await MissionUtils.Console.print("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+        MissionUtils.Console.print("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
         isUserWin = true;
       }
     }
@@ -68,7 +68,7 @@ class BaseballGame {
     );
     isEndInputValid(USER_INPUT);
     if (USER_INPUT === "1") await this.runGame();
-    else await MissionUtils.Console.print("게임이 종료되었습니다.");
+    else MissionUtils.Console.print("게임이 종료되었습니다.");
   }
 }
 export default BaseballGame;

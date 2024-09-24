@@ -22,5 +22,11 @@ export const resultPrint = (strike, ball, nothing) => {
     return;
   }
 
+  // only ball early return
+  if (strike === 0) {
+    MissionUtils.Console.print(ball + COUNT_TEXT.BALL);
+    return;
+  }
+
   MissionUtils.Console.print(`${ball + COUNT_TEXT.BALL} ${strike + COUNT_TEXT.STRIKE}`);
 };

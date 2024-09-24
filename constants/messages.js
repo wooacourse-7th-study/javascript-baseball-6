@@ -18,9 +18,9 @@ export const VALIDATION_MESSAGES = {
 // 규칙
 export const RULES = {
   INPUT_LENGTH: 3,
-  MIN_NUMBER: 1,
-  MAX_NUMBER: 9,
-  NUM_LENGTH: 3,
+  MIN_RANDOM_NUMBER: 1,
+  MAX_RANDOM_NUMBER: 9,
+  NUMBER_MAX_LENGTH: 3,
 };
 
 // 결과

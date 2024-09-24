@@ -5,14 +5,11 @@
  * return 값은 없으며, 유효하지 않을 경우 throw 문을 통해 예외를 발생시키고 프로그램을 종료합니다.
  */
 export function isInputValid(numString, length) {
-  const INPUT_NUMS = numString.split("");
-  if (INPUT_NUMS.length !== length) {
+  if (numString.length !== length) {
     throw new Error(`[ERROR] 입력한 값이 ${length} 자리가 아닙니다.`);
   }
-  for (let num of INPUT_NUMS) {
-    if (isNaN(num)) {
-      throw new Error("[ERROR] 숫자만 입력할 수 있습니다.");
-    }
+  if (isNaN(numString)) {
+    throw new Error("[ERROR] 숫자만 입력할 수 있습니다.");
   }
 }
 

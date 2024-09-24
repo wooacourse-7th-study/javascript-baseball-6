@@ -14,7 +14,7 @@ class BaseballGame {
 
   setUserNums(input) {
     isInputValid(input, this.#COMPUTER_NUM_LEN);
-    this.#UserNums = input.split("").map((str) => Number(str));
+    this.#UserNums = input.split("").map(Number);
   }
 
   /**

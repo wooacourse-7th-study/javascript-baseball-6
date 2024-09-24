@@ -7,7 +7,7 @@ import { MissionUtils } from "@woowacourse/mission-utils";
  * @param {number} length - 컴퓨터가 선택하는 수의 개수
  * @returns {number[]} 컴퓨터가 선택한 수의 배열
  */
-export function generateRandomNum(min, max, length) {
+function generateRandomNum(min, max, length) {
   const COMPUTER_NUMS = [];
   while (COMPUTER_NUMS.length < length) {
     const number = MissionUtils.Random.pickNumberInRange(min, max);
@@ -18,3 +18,5 @@ export function generateRandomNum(min, max, length) {
   }
   return COMPUTER_NUMS;
 }
+
+export default generateRandomNum;

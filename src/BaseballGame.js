@@ -1,5 +1,5 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
-import { generateRandomNum } from "./utils/generateRandomNum.js";
+import generateRandomNum from "./utils/generateRandomNum.js";
 import { isInputValid, isEndInputValid } from "./utils/validation.js";
 import { getResult, printResult } from "./utils/getResult.js";
 

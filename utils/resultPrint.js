@@ -1,6 +1,11 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import { GAME_MESSAGES, RESULT, RULES } from "../constants/messages.js";
 
+/**
+ * strike개수와 ball 개수 파악하여 값 출력 함수
+ * @param {strike와 ball 개수가 담긴 배열} result
+ * @returns
+ */
 const resultPrint = (result) => {
   let strike = result[0];
   let ball = result[1];
@@ -12,7 +17,7 @@ const resultPrint = (result) => {
   if (strike === RULES.NUM_LENGTH) {
     MissionUtils.Console.print(RULES.NUM_LENGTH + RESULT.STRIKE);
     MissionUtils.Console.print(GAME_MESSAGES.THREE_STRIKE);
-    return "finish";
+    return;
   }
 
   if (strike > 0 && ball === 0) {

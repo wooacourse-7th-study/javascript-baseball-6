@@ -30,7 +30,7 @@ const resultPrint = (result) => {
     return;
   }
 
-  MissionUtils.Console.print(`${strike + RESULT.STRIKE} ${ball + RESULT.BALL}`);
+  MissionUtils.Console.print(`${ball + RESULT.BALL} ${strike + RESULT.STRIKE}`);
 };
 
 export default resultPrint;

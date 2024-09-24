@@ -1,5 +1,5 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
-import { MIN_NUMBER, MAX_NUMBER, START_MESSAGE } from "../constants/index.js";
+import { MIN_NUMBER, MAX_NUMBER, MESSAGE } from "../constants/index.js";
 
 export const init = () => {
   let computer = "";
@@ -17,6 +17,6 @@ export const init = () => {
     hash[number] = true;
   }
 
-  MissionUtils.Console.print(START_MESSAGE);
+  MissionUtils.Console.print(MESSAGE.START);
   return computer;
 };

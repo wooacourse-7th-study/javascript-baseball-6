@@ -1,6 +1,6 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import { init, getUserInput, getBaseballCount, resultPrint, getRestartInput } from "./utils/index.js";
-import { END_MESSAGE } from "./constants/index.js";
+import { MESSAGE } from "./constants/index.js";
 
 class App {
   async play() {
@@ -21,7 +21,7 @@ class App {
 
         // 게임 종료
         if (userRestartInput === "2") {
-          MissionUtils.Console.print(END_MESSAGE);
+          MissionUtils.Console.print(MESSAGE.END);
           return;
         }
 
